@@ -1,4 +1,4 @@
-/**
+ /**
   By Sanne Metten - May 2021
   Based on ryand1011 (https://github.com/ryand1011)
   
@@ -20,23 +20,23 @@ class Mp3Notify
     {
       if (source & DfMp3_PlaySources_Sd)
       {
-        SeCharacter2l.print("SD Card, ");
+        Serial.print("SD Card, ");
       }
       if (source & DfMp3_PlaySources_Usb)
       {
-        SeCharacter2l.print("USB Disk, ");
+        Serial.print("USB Disk, ");
       }
       if (source & DfMp3_PlaySources_Flash)
       {
-        SeCharacter2l.print("Flash, ");
+        Serial.print("Flash, ");
       }
-      SeCharacter2l.println(action);
+      Serial.println(action);
     }
     static void OnError(uint16_t errorCode)
     {
       // see DfMp3_Error for code meaning
-      SeCharacter2l.println();
-      SeCharacter2l.print("Com Error ");
+      Serial.println();
+      Serial.print("Com Error ");
       Serial.println(errorCode);
     }
     static void OnPlayFinished(DfMp3_PlaySources source, uint16_t track)
